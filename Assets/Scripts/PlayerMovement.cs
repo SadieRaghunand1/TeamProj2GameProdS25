@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector3 jumpForce;
 
-   
+    public bool inSafeZone;
 
     float rotateOffset;
 
@@ -36,6 +36,16 @@ public class PlayerMovement : MonoBehaviour
        // Jump();
 
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        inSafeZone = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inSafeZone = false;
     }
 
     void MovementUpdate()
