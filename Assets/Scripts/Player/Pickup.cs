@@ -6,9 +6,13 @@ using TMPro;
 
 public class Pickup : MonoBehaviour
 {
+    //Level 2
+
     //Attach to player
     public int numCollected;
     [SerializeField] private TextMeshProUGUI numUI;
+
+    [SerializeField] private int goalCollected;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,6 +26,17 @@ public class Pickup : MonoBehaviour
             numCollected++;
             Destroy(_collision.gameObject);
             numUI.text = "Collected: " + numCollected;
+
+            CheckGoal();
+        }
+    }
+
+    void CheckGoal()
+    {
+        if(numCollected == goalCollected)
+        {
+            //Add end game functionality
+            Debug.Log("Goal collected");
         }
     }
 }
