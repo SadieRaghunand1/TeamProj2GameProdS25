@@ -706,9 +706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebe1bfef98c00643b4e4bca825ff973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: -0.005
-  camRotateMax: 0.5
-  camRotateMin: -0.5
 --- !u!1001 &627122149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2321,7 +2318,10 @@ MonoBehaviour:
   speed: 10
   cameraSpeed: 3
   jumpForce: {x: 0, y: 5, z: 0}
+  inSafeZone: 0
   holdPos: {fileID: 0}
+  playerCamera: {fileID: 608029621}
+  lookXLimit: 45
 --- !u!1 &1328149798
 GameObject:
   m_ObjectHideFlags: 0
