@@ -13,6 +13,10 @@ public class CameraRotation : MonoBehaviour
     [SerializeField] private float camRotateMax;
     [SerializeField] private float camRotateMin;
 
+    [Header("LockRotation")]
+    [SerializeField] private float upperBound;
+    [SerializeField] private float lowerBound;
+
 
     private void Update()
     {
@@ -26,7 +30,20 @@ public class CameraRotation : MonoBehaviour
         //Limit rotation, not working, never being counted in range
         if (transform.localRotation.x > camRotateMin && transform.localRotation.x < camRotateMax) //Doesn't seem to be registering, only registers when min is 0
         {
-            rotateOffset = (rotateOffset + Input.GetAxis("Mouse Y") * cameraSpeed) % 360f;
+            //Debug.Log(Input.GetAxis("Mouse Y"));
+
+            if(Input.GetAxis("Mouse Y") < upperBound && Input.GetAxis("Mouse Y") > lowerBound)
+            {
+                Debug.Log("Inside of mouse pos");
+                rotateOffset = 0;
+            }
+
+            else
+            {
+                Debug.Log("Outside of mouse pos");
+                rotateOffset = (rotateOffset + Input.GetAxis("Mouse Y") * cameraSpeed) % 360f;
+            }
+            
             
         }
         else

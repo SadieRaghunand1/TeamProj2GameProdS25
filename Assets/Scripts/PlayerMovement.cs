@@ -19,13 +19,22 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject holdPos;
 
-    
+    [SerializeField] private Camera playerCamera;
+    public float lookXLimit = 45f;
+    private float rotationX = 0;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
         MovementUpdate();
         Jump();
+        RotateCam();
     }
 
 
@@ -80,6 +89,15 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Player jump
     /// </summary>
+    /// 
+
+    void RotateCam()
+    {
+        rotationX += -Input.GetAxis("Mouse Y") * cameraSpeed;
+        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        //transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+    }
     void Jump()
     {
 
