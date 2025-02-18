@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float cameraSpeed = 3;
 
     [SerializeField] private Vector3 jumpForce;
+    private bool isGrounded;
 
     public bool inSafeZone;
 
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float lookXLimit = 45f;
     private float rotationX = 0;
 
+    #region Monobehaviour methods
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -47,6 +49,16 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        CheckGrounded(collision, true);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        CheckGrounded(collision, false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         inSafeZone = true;
@@ -56,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inSafeZone = false;
     }
+    #endregion
 
     void MovementUpdate()
     {
@@ -101,12 +114,23 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Debug.Log("Jump");
             rb.AddForce(jumpForce, ForceMode.Impulse);
         }
     } //END Jump()
+
+    /// <summary>
+    /// Change isGrounded
+    /// </summary>
+    void CheckGrounded(Collision _collision, bool _changeValue)
+    {
+        if(_collision.gameObject.layer == 6)
+        {
+            isGrounded = _changeValue;
+        }
+    } //END CheckGrounded()
 
     
     
