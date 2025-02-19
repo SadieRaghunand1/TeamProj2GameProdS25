@@ -14,6 +14,7 @@ public class GuardBehavior : MonoBehaviour
     private bool patrol = true;
 
     [SerializeField] private float enemySightDistance;
+    [SerializeField] private GameObject[] peripherals;
     private float delayStateTime = 5;
 
 
@@ -32,16 +33,22 @@ public class GuardBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
-        LookForPlayer();
+        //LookForPlayer();
+        RunLookForPlayer();
     }
 
+    /// <summary>
+    /// Moves guard between set points in patrol state
+    /// </summary>
     void Patrol()
     {
-       
+        //Sets destination of patrol point
          agent.SetDestination(patrolPoints[patrolIndex].transform.position);
 
+        //Checks if the guard has reached the point
          if((Mathf.Round(transform.position.x * 100) / 100) == (Mathf.Round(patrolPoints[patrolIndex].transform.position.x * 100) / 100) && transform.position.z == patrolPoints[patrolIndex].transform.position.z) 
          {
+            //If it has reached its target patrol point, changes to next one
              Debug.Log("Dest reached");
              if(patrolIndex == patrolPoints.Length - 1)
              {
@@ -55,10 +62,15 @@ public class GuardBehavior : MonoBehaviour
          }
         
         
-    }
+    } //END Patrol()
 
+
+    /// <summary>
+    /// 
+    /// </summary>
     void Chase()
     {
+        //Checks if player is in the safe zone, if is not, sets player as destination point
         if(!playerMovement.inSafeZone)
         {
             agent.SetDestination(player.transform.position);
@@ -68,18 +80,22 @@ public class GuardBehavior : MonoBehaviour
             patrol = true;
         }
         
-    }
+    } //END Chase()
 
 
-    void LookForPlayer()
+    /// <summary>
+    /// Sends out raycast to see if the player has entered the field of view of the guard
+    /// </summary>
+    void LookForPlayer(GameObject _sightDirection)
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, enemySightDistance))
+        if (Physics.Raycast(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward), out hit, enemySightDistance))
 
         {
+            //Changes patrol state to faulse if the player is in view
             if(hit.collider.gameObject.layer == 7)
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.DrawRay(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 Debug.Log("Did Hit player");
                 patrol = false;
             }
@@ -87,7 +103,7 @@ public class GuardBehavior : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            Debug.DrawRay(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
 
             if(!patrol)
             {
@@ -96,12 +112,21 @@ public class GuardBehavior : MonoBehaviour
             
             //Debug.Log("Did not Hit");
         }
+    } //END LookForPlayer()
+
+    void RunLookForPlayer()
+    {
+        for(int i = 0; i < peripherals.Length; i++)
+        {
+            LookForPlayer(peripherals[i]);
+        }
     }
 
+    //When the player is out of view, delays change back to patrol to ensure the illusion of chasing
     IEnumerator DelayStateChange()
     {
         yield return new WaitForSeconds(delayStateTime);
         Debug.Log("Change back to patrol");
         patrol = true;
-    }
+    } //END DelayStateChange()
 }
