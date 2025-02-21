@@ -52,6 +52,7 @@ public class GuardBehavior : MonoBehaviour
              Debug.Log("Dest reached");
              if(patrolIndex == patrolPoints.Length - 1)
              {
+                Debug.Log("Back to first patrol pt");
                  patrolIndex = 0;
              }
              else
@@ -70,6 +71,7 @@ public class GuardBehavior : MonoBehaviour
     /// </summary>
     void Chase()
     {
+        Debug.Log("Chase player");
         //Checks if player is in the safe zone, if is not, sets player as destination point
         if(!playerMovement.inSafeZone)
         {
@@ -77,6 +79,7 @@ public class GuardBehavior : MonoBehaviour
         }
         else
         {
+            
             patrol = true;
         }
         
@@ -92,6 +95,7 @@ public class GuardBehavior : MonoBehaviour
         if (Physics.Raycast(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward), out hit, enemySightDistance, 10))
 
         {
+            Debug.Log("Hit" + hit.collider.gameObject.name);
             //Changes patrol state to faulse if the player is in view
             if(hit.collider.gameObject.layer == 7)
             {
