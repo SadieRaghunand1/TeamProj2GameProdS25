@@ -91,18 +91,16 @@ public class GuardBehavior : MonoBehaviour
     /// </summary>
     void LookForPlayer(GameObject _sightDirection)
     {
+        LayerMask _layerMask = LayerMask.GetMask("Player");
+
         RaycastHit hit;
-        if (Physics.Raycast(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward), out hit, enemySightDistance, 10))
+        if (Physics.Raycast(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward), out hit, enemySightDistance, _layerMask))
 
         {
-            Debug.Log("Hit" + hit.collider.gameObject.name);
-            //Changes patrol state to faulse if the player is in view
-            if(hit.collider.gameObject.layer == 7)
-            {
-                Debug.DrawRay(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Did Hit player");
-                patrol = false;
-            }
+            Debug.DrawRay(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.Log("Did Hit player");
+            patrol = false;
+           
             
         }
         else

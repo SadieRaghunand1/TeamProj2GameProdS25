@@ -9,11 +9,9 @@ public class Pickup : MonoBehaviour
     //Level 2
 
     //Attach to player
-    private int numCollected;
+    public int numCollected;
     [SerializeField] private TextMeshProUGUI numUI;
 
-    [SerializeField] int goalCollected;
-    private bool reachedGoal;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,20 +33,5 @@ public class Pickup : MonoBehaviour
         }
     } //END PickupObject()
 
-    /// <summary>
-    /// Checks if player has the required number of pickups when on fans that require pickups
-    /// </summary>
-    public bool CheckGoal()
-    {
-        if(numCollected == goalCollected)
-        {
-            reachedGoal = true;
-            
-            Debug.Log("Goal collected");
-        }
-
-        return reachedGoal;
-    } //END CheckGoal()
-
-    
+   
 }

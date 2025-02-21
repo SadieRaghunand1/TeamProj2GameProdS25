@@ -3860,7 +3860,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1588625217871514942, guid: b4bdd700714e04f488c0f27eb1f3b502, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1640400431864910833, guid: b4bdd700714e04f488c0f27eb1f3b502, type: 3}
       propertyPath: player
@@ -3870,10 +3870,6 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1275694839}
-    - target: {fileID: 1640400431864910833, guid: b4bdd700714e04f488c0f27eb1f3b502, type: 3}
-      propertyPath: enemySightDistance
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 1640400431864910833, guid: b4bdd700714e04f488c0f27eb1f3b502, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 9
@@ -3920,7 +3916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737215562213603046, guid: b4bdd700714e04f488c0f27eb1f3b502, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936917826118665393, guid: b4bdd700714e04f488c0f27eb1f3b502, type: 3}
       propertyPath: m_LocalPosition.x
