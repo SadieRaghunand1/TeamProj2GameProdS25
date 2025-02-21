@@ -1724,6 +1724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundFan
       objectReference: {fileID: 0}
+    - target: {fileID: 5686052854019741579, guid: 8796af4ef0b9578438bc140435327bd4, type: 3}
+      propertyPath: needsKeys
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7594492438701993129, guid: 8796af4ef0b9578438bc140435327bd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.08
