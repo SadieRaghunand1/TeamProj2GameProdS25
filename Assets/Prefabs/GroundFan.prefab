@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2249711904551182600}
   - component: {fileID: 5479583514436648745}
   - component: {fileID: 4962501837346510162}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundFan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

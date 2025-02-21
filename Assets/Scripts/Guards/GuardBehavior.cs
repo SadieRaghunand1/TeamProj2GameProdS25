@@ -89,7 +89,7 @@ public class GuardBehavior : MonoBehaviour
     void LookForPlayer(GameObject _sightDirection)
     {
         RaycastHit hit;
-        if (Physics.Raycast(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward), out hit, enemySightDistance))
+        if (Physics.Raycast(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward), out hit, enemySightDistance, 10))
 
         {
             //Changes patrol state to faulse if the player is in view

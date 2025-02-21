@@ -10,6 +10,7 @@ public class Fan : MonoBehaviour
     [SerializeField] private float minYBeforeForceAgain;
 
     public bool needsKeys;
+    public bool isGuardfan;
 
     private void OnTriggerStay(Collider other)
     {
@@ -28,8 +29,18 @@ public class Fan : MonoBehaviour
             {
                 return;
             }
+            Debug.Log("Player in fan");
             playerRB = _other.gameObject.GetComponent<Rigidbody>();
-            playerRB.AddForce(Vector3.up * fanForce, ForceMode.Impulse);
+
+            if(isGuardfan)
+            {
+                playerRB.AddForce(Vector3.back * fanForce, ForceMode.Impulse);
+            }
+            else
+            {
+                playerRB.AddForce(Vector3.up * fanForce, ForceMode.Impulse);
+            }
+            
 
             if(playerRB.position.y < minYBeforeForceAgain)
             {
