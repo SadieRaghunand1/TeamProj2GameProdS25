@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinItem : MonoBehaviour
 {
@@ -14,8 +15,8 @@ public class WinItem : MonoBehaviour
         if(_collision.gameObject.layer == 7)
         {
             //Win!
-            Debug.Log("Level won!");
             Destroy(this.gameObject);
+            SceneManager.LoadScene(4);
         } 
     }
 }
