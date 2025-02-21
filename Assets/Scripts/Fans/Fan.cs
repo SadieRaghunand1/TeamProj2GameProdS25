@@ -10,6 +10,7 @@ public class Fan : MonoBehaviour
     [SerializeField] private float minYBeforeForceAgain;
 
     public bool needsKeys;
+    public int numKeysNeeded;
     public bool isGuardfan;
 
     private void OnTriggerStay(Collider other)
@@ -25,7 +26,7 @@ public class Fan : MonoBehaviour
         if(_other.gameObject.layer == 7)
         {
             //Checks if this fan requires keys to operate, if it does and the number of keys isn't correct, exits function
-            if(needsKeys && _other.gameObject.GetComponent<Pickup>().CheckGoal() == false)
+            if(needsKeys && _other.gameObject.GetComponent<Pickup>().numCollected != numKeysNeeded)
             {
                 return;
             }
