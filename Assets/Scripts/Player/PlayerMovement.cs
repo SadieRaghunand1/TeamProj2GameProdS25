@@ -44,11 +44,11 @@ public class PlayerMovement : MonoBehaviour
         //added for pause menu
         if (pMenu.isPause != true)
         {
-            Cursor.visible = true;
+            Cursor.visible = false;
         }
         else
         {
-            Cursor.visible = false;
+            Cursor.visible = true;
         }
     }
 
