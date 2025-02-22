@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public float lookXLimit = 45f;
     private float rotationX = 0;
 
+    //added for pause menu
+    public pauseMenu pMenu;
+
     #region Monobehaviour methods
     private void Start()
     {
@@ -37,6 +40,16 @@ public class PlayerMovement : MonoBehaviour
         MovementUpdate();
         Jump();
         RotateCam();
+
+        //added for pause menu
+        if (pMenu.isPause != true)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
     }
 
 
@@ -106,10 +119,13 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateCam()
     {
-        rotationX += -Input.GetAxis("Mouse Y") * cameraSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        //transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        //added for pause menu
+        if (pMenu.isPause != true)
+        {
+            rotationX += -Input.GetAxis("Mouse Y") * cameraSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        }
     }
     void Jump()
     {
