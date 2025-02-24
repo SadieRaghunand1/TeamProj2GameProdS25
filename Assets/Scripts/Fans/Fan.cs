@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fan : MonoBehaviour
 {
+    private GameManager gameManager;
 
     Rigidbody playerRB;
     [SerializeField] private float fanForce;
@@ -12,6 +13,11 @@ public class Fan : MonoBehaviour
     public bool needsKeys;
     public int numKeysNeeded;
     public bool isGuardfan;
+
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();   
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -26,7 +32,7 @@ public class Fan : MonoBehaviour
         if(_other.gameObject.layer == 7)
         {
             //Checks if this fan requires keys to operate, if it does and the number of keys isn't correct, exits function
-            if(needsKeys && _other.gameObject.GetComponent<Pickup>().numCollected != numKeysNeeded)
+            if(needsKeys && _other.gameObject.GetComponent<Pickup>().numCollected != numKeysNeeded && !gameManager.cheatMode)
             {
                 return;
             }
