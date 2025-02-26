@@ -13,4 +13,8 @@ public class winLose : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Start()
+    {
+        Cursor.visible = true;
+    }
 }
