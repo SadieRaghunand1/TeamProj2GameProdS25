@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class KillZone : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter (Collision other)
     {
         RestartLevel(other);
     }
 
-    void RestartLevel(Collider _other)
+    void RestartLevel(Collision _other)
     {
         if(_other.gameObject.layer == 7)
         {
