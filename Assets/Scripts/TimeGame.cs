@@ -8,7 +8,9 @@ public class TimeGame : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
     private float showTime;
-    private float timerTime = 90;
+    private float timerTime;
+
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,20 @@ public class TimeGame : MonoBehaviour
     {
         RunTimer();
     }
+
+    void InitValues()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+        if(gameManager.speedrunMode)
+        {
+            timerTime = 75;
+        }
+        else
+        {
+            timerTime = 90;
+        }
+    }
+
 
     void RunTimer()
     {
