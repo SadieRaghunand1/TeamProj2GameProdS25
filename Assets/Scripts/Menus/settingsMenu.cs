@@ -5,14 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class settingsMenu : MonoBehaviour
 {
-    //functions for each button
-    public void option1()
+    private GameManager gameManager;
+    private void Awake()
     {
-    //code for option1
+        gameManager = FindAnyObjectByType<GameManager>();
     }
+
+    //functions for each button
+    //Cheat Mode
+    public void option1() 
+    {
+        gameManager.TurnOnCheatMode();
+    }
+
+    //Speedrun
     public void option2()
     {
-    //code for option2
+        gameManager.TurnOnSpeedRun();
     }
     public void back()
     {

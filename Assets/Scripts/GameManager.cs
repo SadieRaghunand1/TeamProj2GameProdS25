@@ -5,9 +5,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool cheatMode;
+    public bool speedrunMode;
 
-    void TurnOnCheatMode()
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void TurnOnCheatMode()
     {
         cheatMode = true;
+    }
+
+    public void TurnOnSpeedRun()
+    {
+
+    speedrunMode = true; 
     }
 }
