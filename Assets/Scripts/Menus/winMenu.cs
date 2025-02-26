@@ -16,5 +16,6 @@ public class winLose : MonoBehaviour
     public void Start()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

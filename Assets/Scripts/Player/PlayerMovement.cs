@@ -50,6 +50,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.visible = true;
         }
+
+        if (pMenu.isPause == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
 
