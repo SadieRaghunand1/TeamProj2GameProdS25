@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float cameraSpeed = 3;
 
     [SerializeField] private Vector3 jumpForce;
-    private bool isGrounded;
+    public bool isGrounded;
 
     public bool inSafeZone;
 
@@ -121,10 +121,6 @@ public class PlayerMovement : MonoBehaviour
         rb.MoveRotation(Quaternion.Euler(0, rotateOffset, 0));
     } //END RotatePlayer()
 
-    /// <summary>
-    /// Player jump
-    /// </summary>
-    /// 
 
     void RotateCam()
     {
@@ -136,6 +132,11 @@ public class PlayerMovement : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         }
     }
+
+
+    /// <summary>
+    /// Player jump
+    /// </summary>
     void Jump()
     {
 
