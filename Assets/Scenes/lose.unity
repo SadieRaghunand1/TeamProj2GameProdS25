@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 195881285}
   - component: {fileID: 195881284}
   m_Layer: 5
-  m_Name: restart
+  m_Name: mainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Restart
+  m_text: 'MAIN MENU
 
 '
   m_isRightToLeft: 0
@@ -1168,7 +1168,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d8143d29e20a6b64c8aa2264f6d6bf44, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
