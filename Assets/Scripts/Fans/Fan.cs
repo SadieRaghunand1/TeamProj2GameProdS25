@@ -49,7 +49,7 @@ public class Fan : MonoBehaviour
             }
             
 
-            if(playerRB.position.y < minYBeforeForceAgain)
+            if(playerRB.position.y < minYBeforeForceAgain && !isGuardfan)
             {
                 playerRB.AddForce(Vector3.up * fanForce, ForceMode.Impulse);
             }

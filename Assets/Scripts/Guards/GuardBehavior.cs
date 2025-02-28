@@ -17,11 +17,17 @@ public class GuardBehavior : MonoBehaviour
     [SerializeField] private GameObject[] peripherals;
     private float delayStateTime = 5;
 
-
+    Vector3 variabe = new Vector3(180f, 0f, 0f);
     // Update is called once per frame
     void Update()
     {
-       if(patrol)
+
+       /* transform.eulerAngles = new Vector3(
+    transform.eulerAngles.x - 180,
+    transform.eulerAngles.y,
+    transform.eulerAngles.z
+);*/
+        if (patrol)
         {
             Patrol();
         }

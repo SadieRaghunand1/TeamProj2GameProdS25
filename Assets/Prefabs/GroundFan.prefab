@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 6.99781, z: 1}
-  m_Center: {x: 0, y: 2.9989085, z: 0}
+  m_Size: {x: 1, y: 14.943213, z: 1}
+  m_Center: {x: 0, y: 6.9716067, z: 0}
 --- !u!114 &5686052854019741579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +124,8 @@ MonoBehaviour:
   fanForce: 1
   minYBeforeForceAgain: 2
   needsKeys: 0
+  numKeysNeeded: 0
+  isGuardfan: 0
 --- !u!208 &2249711904551182600
 NavMeshObstacle:
   m_ObjectHideFlags: 0
