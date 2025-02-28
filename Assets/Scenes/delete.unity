@@ -409,7 +409,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1770602226}
   - {fileID: 1927566335}
   - {fileID: 539391934}
   - {fileID: 965077722}
@@ -418,6 +417,7 @@ Transform:
   - {fileID: 651588851}
   - {fileID: 2615827}
   - {fileID: 1944390622}
+  - {fileID: 1770602226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55487136
@@ -15034,7 +15034,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 0da584504e7f03f4c932f7b8e513edf9, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 2b31f8a4b32690542a33020af5079838, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1772340372
 PrefabInstance:
