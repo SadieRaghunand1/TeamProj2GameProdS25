@@ -21,6 +21,7 @@ public class GuardBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
        if(patrol)
         {
             Patrol();
