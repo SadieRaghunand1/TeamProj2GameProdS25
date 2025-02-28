@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public bool keyCollected;
-
+    public int keyCollected;
+    [SerializeField] private int goalKey;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -16,13 +16,13 @@ public class Door : MonoBehaviour
 
     public void ChangeKeyStatus()
     {
-        keyCollected = true;
+        keyCollected++;
     }
 
 
     void OpenDoor(Collision _collision)
     {
-        if(_collision.gameObject.layer == 7 && keyCollected)
+        if(_collision.gameObject.layer == 7 && keyCollected == goalKey)
         {
             Destroy(this.gameObject);
         }

@@ -7,7 +7,7 @@ public class Key : MonoBehaviour, IPickup
 {
     [SerializeField] private TextMeshProUGUI numUI;
     [SerializeField] private Door door;
-
+    [SerializeField] private KeyPickupManager manager;
     private void OnCollisionEnter(Collision collision)
     {
         PickupObject(collision);
@@ -22,8 +22,7 @@ public class Key : MonoBehaviour, IPickup
         {
             
            door.ChangeKeyStatus();
-            if(numUI != null)
-            numUI.text = "Collected: " + 1;
+            manager.ChangeKeyUI();
             Destroy(this.gameObject);
 
         }

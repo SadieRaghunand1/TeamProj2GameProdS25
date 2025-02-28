@@ -11,7 +11,7 @@ public class Pickup : MonoBehaviour, IPickup
     //Attach to player
     public int numCollected;
     [SerializeField] private TextMeshProUGUI numUI;
-
+    [SerializeField] private KeyPickupManager manager;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,8 +27,8 @@ public class Pickup : MonoBehaviour, IPickup
         {
             numCollected++;
             Destroy(_collision.gameObject);
-            numUI.text = "Collected: " + numCollected;
-
+            //numUI.text = "Collected: " + numCollected;
+            manager.ChangePickupUI();
             
         }
     } //END PickupObject()
