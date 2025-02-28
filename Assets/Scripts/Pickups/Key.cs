@@ -20,9 +20,9 @@ public class Key : MonoBehaviour, IPickup
     {
         if (_collision.gameObject.layer == 7)
         {
-            
+            Debug.Log("hit player");
            door.ChangeKeyStatus();
-            manager.ChangeKeyUI();
+            //manager.ChangeKeyUI();
             Destroy(this.gameObject);
 
         }

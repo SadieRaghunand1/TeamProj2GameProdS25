@@ -28,7 +28,7 @@ public class Pickup : MonoBehaviour, IPickup
             numCollected++;
             Destroy(_collision.gameObject);
             //numUI.text = "Collected: " + numCollected;
-            manager.ChangePickupUI();
+            //manager.ChangePickupUI();
             
         }
     } //END PickupObject()

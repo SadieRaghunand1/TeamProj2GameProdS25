@@ -16,6 +16,7 @@ public class Door : MonoBehaviour
 
     public void ChangeKeyStatus()
     {
+        Debug.Log("KeyCollected");
         keyCollected++;
     }
 

@@ -77,7 +77,8 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.layer == 6)
         {
             Debug.Log("Layer 6");
-            transform.parent = collision.gameObject.transform;
+           // transform.parent = collision.gameObject.transform;
+           // transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
         CheckGrounded(collision, true);
         isJumping = false;
@@ -88,7 +89,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             Debug.Log("Layer 6");
-            transform.parent = null;
+            /*transform.parent = null;
+            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);*/
         }
         CheckGrounded(collision, false);
         
