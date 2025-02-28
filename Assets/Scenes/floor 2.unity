@@ -6743,6 +6743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyCollected: 0
   goalKey: 1
+  manager: {fileID: 0}
 --- !u!4 &935509972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7191914597160707186, guid: b5365e1eb058a1749a3fb63cf8c3d63b, type: 3}
@@ -10470,6 +10471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyCollected: 0
   goalKey: 2
+  manager: {fileID: 0}
 --- !u!1 &1287532232
 GameObject:
   m_ObjectHideFlags: 0
@@ -16067,6 +16069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_Guard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5772455089596016363, guid: 4972f5efc329e2548ac24289635e8eea, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 6113200536680555182, guid: 4972f5efc329e2548ac24289635e8eea, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -18202,6 +18208,52 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &2033505348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033505350}
+  - component: {fileID: 2033505349}
+  m_Layer: 0
+  m_Name: KeyPickupManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2033505349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033505348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b461dfb10559bd143af285e7c45e5104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numUIKey: {fileID: 0}
+  numUIPU: {fileID: 0}
+--- !u!4 &2033505350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033505348}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 62.27314, y: 15.53, z: -53.439392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2038866819
 GameObject:
   m_ObjectHideFlags: 0
@@ -19546,3 +19598,4 @@ SceneRoots:
   - {fileID: 1333159881}
   - {fileID: 1980056416}
   - {fileID: 835019195}
+  - {fileID: 2033505350}

@@ -22,6 +22,7 @@ public class Key : MonoBehaviour, IPickup
         {
             Debug.Log("hit player");
            door.ChangeKeyStatus();
+            manager.ChangeKeyUI(1);
             //manager.ChangeKeyUI();
             Destroy(this.gameObject);
 

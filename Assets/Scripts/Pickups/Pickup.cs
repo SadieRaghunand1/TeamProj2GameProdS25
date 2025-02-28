@@ -26,6 +26,7 @@ public class Pickup : MonoBehaviour, IPickup
         if(_collision.gameObject.layer == 9)
         {
             numCollected++;
+            manager.ChangePickupUI();
             Destroy(_collision.gameObject);
             //numUI.text = "Collected: " + numCollected;
             //manager.ChangePickupUI();
