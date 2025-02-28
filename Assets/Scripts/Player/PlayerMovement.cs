@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector3 jumpForce;
     public bool isGrounded;
+    bool isJumping;
 
     public bool inSafeZone;
 
@@ -71,14 +72,26 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) //Player lands after jumping
     {
+        if(collision.gameObject.layer == 6)
+        {
+            Debug.Log("Layer 6");
+            transform.parent = collision.gameObject.transform;
+        }
         CheckGrounded(collision, true);
+        isJumping = false;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision) //Player jumps
     {
+        if (collision.gameObject.layer == 6)
+        {
+            Debug.Log("Layer 6");
+            transform.parent = null;
+        }
         CheckGrounded(collision, false);
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -140,9 +153,10 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !isJumping))
         {
             Debug.Log("Jump");
+            isJumping = true;
             rb.AddForce(jumpForce, ForceMode.Impulse);
         }
     } //END Jump()
@@ -155,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         if(_collision.gameObject.layer == 6)
         {
             isGrounded = _changeValue;
+            
         }
     } //END CheckGrounded()
 

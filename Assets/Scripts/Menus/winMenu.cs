@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class winLose : MonoBehaviour
 {
+    
+
     public void restart()
     {
         SceneManager.LoadScene(0);
