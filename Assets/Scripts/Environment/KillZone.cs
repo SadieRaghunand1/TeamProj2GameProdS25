@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class KillZone : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject startCheckPoint;
     private void OnCollisionEnter (Collision other)
     {
         RestartLevel(other);
@@ -14,8 +16,9 @@ public class KillZone : MonoBehaviour
     {
         if(_other.gameObject.layer == 7)
         {
-            int _scene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(_scene);
+            /*int _scene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(_scene);*/
+            player.transform.position = startCheckPoint.transform.position;
         }
     }
 }

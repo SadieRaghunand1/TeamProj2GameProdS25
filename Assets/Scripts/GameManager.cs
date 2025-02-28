@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
 
     public void TurnOnCheatMode()
     {
-        cheatMode = true;
+        cheatMode = !cheatMode;
     }
 
     public void TurnOnSpeedRun()
     {
 
-    speedrunMode = true; 
+    speedrunMode = !speedrunMode; 
     }
 }
