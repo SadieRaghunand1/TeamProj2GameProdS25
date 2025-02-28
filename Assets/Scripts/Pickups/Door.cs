@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    private GameManager gameManager;
+
     public int keyCollected;
     [SerializeField] private int goalKey;
     [SerializeField] private KeyPickupManager manager;
@@ -21,10 +23,19 @@ public class Door : MonoBehaviour
         keyCollected++;
     }
 
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+        if (gameManager.cheatMode)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 
     void OpenDoor(Collision _collision)
     {
-        if(_collision.gameObject.layer == 7 && keyCollected == goalKey)
+        if(_collision.gameObject.layer == 7 && keyCollected == goalKey && !gameManager.cheatMode)
         {
             manager.ChangeKeyUI(-goalKey);
             Destroy(this.gameObject);
