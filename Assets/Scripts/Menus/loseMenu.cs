@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class loseMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void restart()
     {
         SceneManager.LoadScene(0);

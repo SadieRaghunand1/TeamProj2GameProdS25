@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Pickup : MonoBehaviour
+public class Pickup : MonoBehaviour, IPickup
 {
     //Level 2
 
@@ -21,7 +21,7 @@ public class Pickup : MonoBehaviour
     /// <summary>
     /// On collision with pickup, increases the number of pickups collected
     /// </summary>
-    void PickupObject(Collision _collision)
+    public void PickupObject(Collision _collision)
     {
         if(_collision.gameObject.layer == 9)
         {
