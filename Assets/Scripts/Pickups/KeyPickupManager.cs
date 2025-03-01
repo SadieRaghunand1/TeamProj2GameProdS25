@@ -14,6 +14,12 @@ public class KeyPickupManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI numUIPU;
 
 
+    private void Start()
+    {
+        numUIKey.text = 0.ToString();
+        numUIPU.text = 0.ToString();
+    }
+
     public void ChangeKeyUI(int _change)
     {
         keyCount+= _change;
