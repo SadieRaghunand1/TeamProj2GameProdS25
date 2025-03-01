@@ -98,12 +98,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        inSafeZone = true;
+        if(other.gameObject.layer == 11)
+        {
+            Debug.Log("safe zone?");
+            inSafeZone = true;
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        inSafeZone = false;
+        if(other.gameObject.layer == 11)
+        {
+            Debug.Log("Exit safe zone");
+            inSafeZone = false;
+        }
+   
     }
     #endregion
 
@@ -157,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !isJumping))
         {
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
             isJumping = true;
             rb.AddForce(jumpForce, ForceMode.Impulse);
         }

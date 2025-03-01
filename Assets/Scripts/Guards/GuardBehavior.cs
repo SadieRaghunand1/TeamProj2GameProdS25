@@ -54,10 +54,10 @@ public class GuardBehavior : MonoBehaviour
          if((Mathf.Round(transform.position.x * 100) / 100) == (Mathf.Round(patrolPoints[patrolIndex].transform.position.x * 100) / 100) && transform.position.z == patrolPoints[patrolIndex].transform.position.z) 
          {
             //If it has reached its target patrol point, changes to next one
-             Debug.Log("Dest reached");
+             //Debug.Log("Dest reached");
              if(patrolIndex == patrolPoints.Length - 1)
              {
-                Debug.Log("Back to first patrol pt");
+               //Debug.Log("Back to first patrol pt");
                  patrolIndex = 0;
              }
              else
@@ -76,11 +76,17 @@ public class GuardBehavior : MonoBehaviour
     /// </summary>
     void Chase()
     {
-        Debug.Log("Chase player");
+        //Debug.Log("Chase player");
         //Checks if player is in the safe zone, if is not, sets player as destination point
         if(!playerMovement.inSafeZone)
         {
             agent.SetDestination(player.transform.position);
+            if (countSFX == 0)
+            {
+                audioSource.Play();
+                countSFX++;
+            }
+
         }
         else
         {
@@ -103,14 +109,9 @@ public class GuardBehavior : MonoBehaviour
 
         {
             Debug.DrawRay(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit player");
+            //Debug.Log("Did Hit player");
             patrol = false;
-            if(countSFX == 0)
-            {
-                audioSource.Play();
-                countSFX++;
-            }
-           
+            
             
         }
         else
@@ -138,7 +139,7 @@ public class GuardBehavior : MonoBehaviour
     IEnumerator DelayStateChange()
     {
         yield return new WaitForSeconds(delayStateTime);
-        Debug.Log("Change back to patrol");
+        //Debug.Log("Change back to patrol");
         patrol = true;
         countSFX = 0;
     } //END DelayStateChange()
