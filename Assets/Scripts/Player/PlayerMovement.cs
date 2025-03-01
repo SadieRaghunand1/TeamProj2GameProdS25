@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        isGrounded = true;
     }
 
     // Update is called once per frame
@@ -139,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
     void RotateCam()
     {
         //added for pause menu
-        if (pMenu.isPause != true)
+        if (pMenu.isPause == false)
         {
             rotationX += -Input.GetAxis("Mouse Y") * cameraSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);

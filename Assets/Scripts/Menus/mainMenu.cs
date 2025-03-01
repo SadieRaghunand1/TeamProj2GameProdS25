@@ -44,7 +44,9 @@ public class mainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void loadMainMenu(){
+    public void loadMainMenu()
+    {
+        gameManager.PlayMenuMusic();
         SceneManager.LoadScene(0);
     }
 }

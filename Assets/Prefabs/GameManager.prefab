@@ -49,7 +49,7 @@ MonoBehaviour:
   speedrunMode: 0
   bgMusic: {fileID: 1678209818179151914}
   menuMusic: {fileID: 8300000, guid: 78177072995426a4f92e1ce99d709d0a, type: 3}
-  gameMusic: {fileID: 8300000, guid: 78177072995426a4f92e1ce99d709d0a, type: 3}
+  gameMusic: {fileID: 8300000, guid: 362231a2db21c6b429369b25cf25574e, type: 3}
 --- !u!82 &1678209818179151914
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.862
+  m_Volume: 0.584
   m_Pitch: 1
   Loop: 1
   Mute: 0
