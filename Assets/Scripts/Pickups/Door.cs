@@ -11,6 +11,8 @@ public class Door : MonoBehaviour
     [SerializeField] private int goalKey;
     [SerializeField] private KeyPickupManager manager;
 
+    [SerializeField] private AudioSource audioSource;
+
     private void OnCollisionEnter(Collision collision)
     {
         OpenDoor(collision);
@@ -38,8 +40,25 @@ public class Door : MonoBehaviour
         if(_collision.gameObject.layer == 7 && keyCollected == goalKey && !gameManager.cheatMode)
         {
             manager.ChangeKeyUI(-goalKey);
-            Destroy(this.gameObject);
+            audioSource.Play();
+            StartCoroutine(DelayDestroyForSound());
+           // Destroy(this.gameObject);
         }
+
+        if(gameManager.cheatMode && _collision.gameObject.layer == 7)
+        {
+            audioSource.Play();
+            StartCoroutine(DelayDestroyForSound());
+            //Destroy(this.gameObject);   
+        }
+    }
+
+    IEnumerator DelayDestroyForSound()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 
 }

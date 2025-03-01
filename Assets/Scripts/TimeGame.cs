@@ -33,7 +33,7 @@ public class TimeGame : MonoBehaviour
         }
         else
         {
-            timerTime = 400;
+            timerTime = 90;
         }
     }
 

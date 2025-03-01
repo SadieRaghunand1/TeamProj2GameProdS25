@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     public bool cheatMode;
     public bool speedrunMode;
 
+    public AudioSource bgMusic;
+    public AudioClip menuMusic;
+    public AudioClip gameMusic;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -22,4 +26,22 @@ public class GameManager : MonoBehaviour
 
     speedrunMode = !speedrunMode; 
     }
+
+    public void PlayMenuMusic()
+    {
+        bgMusic.clip = menuMusic;
+        bgMusic.Play();
+    }
+
+    public void PlayGameMusic()
+    {
+        bgMusic.clip = gameMusic;
+        bgMusic.Play();
+    }
+
+    public void StopMusicEndGame()
+    {
+        bgMusic.Stop();
+    }
+
 }

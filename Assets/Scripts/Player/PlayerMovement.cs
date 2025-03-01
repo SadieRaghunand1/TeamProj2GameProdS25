@@ -88,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            Debug.Log("Layer 6");
             /*transform.parent = null;
             transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);*/
         }

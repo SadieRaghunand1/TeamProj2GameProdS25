@@ -8,6 +8,8 @@ public class Key : MonoBehaviour, IPickup
     [SerializeField] private TextMeshProUGUI numUI;
     [SerializeField] private Door door;
     [SerializeField] private KeyPickupManager manager;
+
+    [SerializeField] private AudioSource audioSource;
     private void OnCollisionEnter(Collision collision)
     {
         PickupObject(collision);
@@ -23,10 +25,20 @@ public class Key : MonoBehaviour, IPickup
             Debug.Log("hit player");
            door.ChangeKeyStatus();
             manager.ChangeKeyUI(1);
+            audioSource.Play();
+            StartCoroutine(DelayDestroyForSound());
             //manager.ChangeKeyUI();
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
 
         }
     } //END PickupObject()
 
+
+    IEnumerator DelayDestroyForSound()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(this.gameObject);
+    }
 }
