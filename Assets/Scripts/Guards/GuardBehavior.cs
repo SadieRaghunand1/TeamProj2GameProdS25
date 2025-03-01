@@ -18,15 +18,14 @@ public class GuardBehavior : MonoBehaviour
     private float delayStateTime = 5;
 
     Vector3 variabe = new Vector3(180f, 0f, 0f);
+
+    [SerializeField] private AudioSource audioSource;
+    int countSFX = 0;
     // Update is called once per frame
     void Update()
     {
 
-       /* transform.eulerAngles = new Vector3(
-    transform.eulerAngles.x - 180,
-    transform.eulerAngles.y,
-    transform.eulerAngles.z
-);*/
+      
         if (patrol)
         {
             Patrol();
@@ -106,6 +105,11 @@ public class GuardBehavior : MonoBehaviour
             Debug.DrawRay(_sightDirection.transform.position, _sightDirection.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             Debug.Log("Did Hit player");
             patrol = false;
+            if(countSFX == 0)
+            {
+                audioSource.Play();
+                countSFX++;
+            }
            
             
         }
@@ -136,5 +140,6 @@ public class GuardBehavior : MonoBehaviour
         yield return new WaitForSeconds(delayStateTime);
         Debug.Log("Change back to patrol");
         patrol = true;
+        countSFX = 0;
     } //END DelayStateChange()
 }
