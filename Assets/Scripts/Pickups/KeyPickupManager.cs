@@ -48,7 +48,7 @@ public class KeyPickupManager : MonoBehaviour
     /// <summary>
     /// Runs whenever game starts or is resumed, sets keys and pickups inactive is cheatmode is enabled, sets door inactive
     /// </summary>
-    public void CheatModeEnabledKeysAndPU()
+    private void CheatModeEnabledKeysAndPU()
     {
         //Keys
         for(int i = 0; i < allKeys.Length; i++)
@@ -82,7 +82,7 @@ public class KeyPickupManager : MonoBehaviour
     /// <summary>
     /// Runs whenever game is resumed, sets keys and pickups active, doors active
     /// </summary>
-    public void DisableCheatMode()
+    private void DisableCheatMode()
     {
         //Keys
         for (int i = 0; i < allKeys.Length; i++)
@@ -116,6 +116,21 @@ public class KeyPickupManager : MonoBehaviour
         {
 
         }*/
+    }
+
+    /// <summary>
+    /// Checks if cheat mode is changed when resuming game
+    /// </summary>
+    public void OnResumeClick()
+    {
+        if(gameManager.cheatMode)
+        {
+            CheatModeEnabledKeysAndPU();
+        }
+        else if(!gameManager.cheatMode)
+        {
+            DisableCheatMode();
+        }
     }
 
 }
