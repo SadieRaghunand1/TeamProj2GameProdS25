@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The settings can not be changed once in game.
+  m_text: WARNING! Speedrun mode can not be changed once in game.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 38d7724de05cde64aa0a9a8599c61af7, type: 2}
   m_sharedMaterial: {fileID: -4393017286818158073, guid: 38d7724de05cde64aa0a9a8599c61af7, type: 2}

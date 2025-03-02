@@ -17,6 +17,7 @@ public class pauseMenu : MonoBehaviour
     public GameObject option22;
     public GameObject option11;
     public GameObject optionText;
+    public GameObject opCanvas;
 
     private GameManager gameManager;
 
@@ -36,6 +37,7 @@ public class pauseMenu : MonoBehaviour
         option21.SetActive(false);
         option12.SetActive(false);
         optionText.SetActive(false);
+        opCanvas.SetActive(false);
 
         gameManager = FindAnyObjectByType<GameManager>();
     }
@@ -66,9 +68,10 @@ public class pauseMenu : MonoBehaviour
         Cursor.visible = false;
         howPlayImage.SetActive(false);
         howPlay = false;
+        opCanvas.SetActive(false);
         op = false;
-        optionText.SetActive(false);
-        optionPicture();
+     //   optionText.SetActive(false);
+     //   optionPicture();
     }
     public void goMainMenu()
     {
@@ -82,20 +85,35 @@ public class pauseMenu : MonoBehaviour
         {
             howPlayImage.SetActive(true);
             howPlay = true;
-            op = false;
-            optionText.SetActive(false);
-            optionPicture();
+        //    op = false;
+        //   optionText.SetActive(false);
+        //    optionPicture();
         }
         else if (howPlay == true)
         {
             howPlayImage.SetActive(false);
             howPlay = false;
-            op = false;
-            optionText.SetActive(false);
-            optionPicture();
+        //    op = false;
+        //    optionText.SetActive(false);
+        //    optionPicture();
         }
     }
+    public void optionCanvas()
+    {
+        if (op == false)
+        {
+            opCanvas.SetActive(true);
+            op = true;
 
+        }
+        else if (op == true)
+        {
+            opCanvas.SetActive(false);
+            op = false;
+
+        }
+    }
+    /*
     public void optionsPaused()
     {
         if (op == false)
@@ -162,5 +180,6 @@ public class pauseMenu : MonoBehaviour
             }
         }
     }
+    */
 }
 
