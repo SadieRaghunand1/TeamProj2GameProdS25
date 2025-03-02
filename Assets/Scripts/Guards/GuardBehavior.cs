@@ -84,6 +84,8 @@ public class GuardBehavior : MonoBehaviour
             if (countSFX == 0)
             {
                 audioSource.Play();
+                StartCoroutine(DelayDelaySFX());
+
                 countSFX++;
             }
 
@@ -143,4 +145,16 @@ public class GuardBehavior : MonoBehaviour
         patrol = true;
         countSFX = 0;
     } //END DelayStateChange()
+
+    IEnumerator DelaySFX()
+    {
+       // audioSource.volume = 0;
+        yield return new WaitForSeconds(delayStateTime);
+        audioSource.volume = 0.45f;
+    }
+    IEnumerator DelayDelaySFX()
+    {
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(DelaySFX());
+    }
 }
