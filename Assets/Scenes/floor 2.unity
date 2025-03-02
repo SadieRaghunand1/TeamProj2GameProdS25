@@ -10536,6 +10536,22 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 771106463}
+    - target: {fileID: 5459479229277656593, guid: 1c05e746f02819342b48f9eaa19b2d40, type: 3}
+      propertyPath: keyCardObjs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459479229277656593, guid: 1c05e746f02819342b48f9eaa19b2d40, type: 3}
+      propertyPath: keyCardObjs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1409248119}
+    - target: {fileID: 5459479229277656593, guid: 1c05e746f02819342b48f9eaa19b2d40, type: 3}
+      propertyPath: keyCardObjs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2125958979}
+    - target: {fileID: 5459479229277656593, guid: 1c05e746f02819342b48f9eaa19b2d40, type: 3}
+      propertyPath: keyCardObjs.Array.data[2]
+      value: 
+      objectReference: {fileID: 995397230}
     - target: {fileID: 6432098670007273591, guid: 1c05e746f02819342b48f9eaa19b2d40, type: 3}
       propertyPath: m_Mass
       value: 1.5

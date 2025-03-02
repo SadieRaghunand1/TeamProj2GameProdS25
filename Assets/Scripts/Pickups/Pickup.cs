@@ -15,6 +15,20 @@ public class Pickup : MonoBehaviour, IPickup
 
     [SerializeField] private AudioSource audioSource;
     private GameObject pickUp;
+
+    [SerializeField] private GameObject[] keyCardObjs;
+
+    private void Start()
+    {
+        if (FindAnyObjectByType<GameManager>().cheatMode)
+        {
+            for(int i = 0; i < keyCardObjs.Length; i++)
+            {
+                Destroy(keyCardObjs[i]);
+            }
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         PickupObject(collision);

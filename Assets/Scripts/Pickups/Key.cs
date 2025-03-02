@@ -10,6 +10,15 @@ public class Key : MonoBehaviour, IPickup
     [SerializeField] private KeyPickupManager manager;
 
     [SerializeField] private AudioSource audioSource;
+
+    private void Start()
+    {
+        if(FindAnyObjectByType<GameManager>().cheatMode)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         PickupObject(collision);
