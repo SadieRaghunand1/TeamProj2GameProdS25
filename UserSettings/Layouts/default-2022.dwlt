@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 129
+  controlID: 128
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 130
+  controlID: 129
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 81
+  controlID: 70
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -217,8 +217,8 @@ MonoBehaviour:
     y: 0
     width: 304
     height: 473.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -281,7 +281,7 @@ MonoBehaviour:
   - {fileID: 21}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 3
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -379,9 +379,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 80690000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 36a5fefffabcfeffe0f8feff7830ffffda30ffff5e3fffffac3fffff0240ffff5040ffffaa40ffff1057ffff5057ffffa681ffff8a83ffff3a93ffffe2bdffff88cdffff32fbfffffa5d00001463000032630000a08a0000ba8b0000cc8c0000ba8f0000d88f000050a00000cea000000ea1000018a10000f8a600005cb5000084b600005ab7000096b70000ceb8000074ba000092ba0000d6f70000e2f70000
+      m_SelectedIDs: d88e0100
+      m_LastClickedID: 102104
+      m_ExpandedIDs: 46d2fdff7604feff6805feff6419feffb619feff101afeffd029feffc62afeffd83afeff283cfeff2843feff305dfeff8c5efeff8a6ffeffc688feff3a99fefff2a5feff80b6fefffceffeffbafdfeff4407ffff342dffff6899ffffd89affff9c9ffffff0aeffff74cdffff8cd0ffff70e0ffff20e4ffff40f8ffffc66c0000006d00000a6d0000828900005e9a0000769f0000949f000042aa00002ee100002ce30000a0e4000038e6000046e6000064e60000ca0a01002e0f010018350100cc3501002236010048360100c437010092390100a4390100ce430100c64501006e510100665301001859010094590100105b0100847b0100007c01007c7d01006c8f01005a90010064910100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -741,7 +741,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 48, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -839,9 +839,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -99.3984, y: 63.002007, z: 48.758045}
+    m_Target: {x: 434.63174, y: 159.44456, z: -277.11627}
     speed: 2
-    m_Value: {x: -99.3984, y: 63.002007, z: 48.758045}
+    m_Value: {x: 434.63174, y: 159.44456, z: -277.11627}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -874,7 +874,7 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0.5, y: 0.5}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -887,13 +887,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2756669, y: -0.31706625, z: 0.09595574, w: 0.9027225}
+    m_Target: {x: 0.14867322, y: 0.13367195, z: 0.022220498, w: -0.98146874}
     speed: 2
-    m_Value: {x: 0.27557892, y: -0.31696507, z: 0.095925115, w: 0.9024344}
+    m_Value: {x: 0.14836878, y: 0.13459773, z: 0.02235705, w: -0.97947454}
   m_Size:
-    m_Target: 80.94493
+    m_Target: 9.067785
     speed: 2
-    m_Value: 80.94493
+    m_Value: 9.067785
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1237,14 +1237,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\melis\Desktop\Robot Fan\TeamProj2GameProdS25
+  m_LastProjectPath: C:\Users\rappa\Documents\unity\TeamProj2GameProdS25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 68690000
-    m_LastClickedID: 26984
-    m_ExpandedIDs: 00000000486900006e69000000ca9a3b
+    scrollPos: {x: 0, y: 239.80002}
+    m_SelectedIDs: f46b0000
+    m_LastClickedID: 27636
+    m_ExpandedIDs: 00000000f06b0000f26b0000f46b0000f66b0000046c0000066c0000226c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1272,7 +1272,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000048690000
+    m_ExpandedIDs: 00000000f06b0000f26b0000f46b0000f66b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2203,7 +2203,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -54558
+  m_LastSelectedObjectID: -113864
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
