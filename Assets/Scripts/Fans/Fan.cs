@@ -36,7 +36,7 @@ public class Fan : MonoBehaviour
             {
                 return;
             }
-            Debug.Log("Player in fan");
+            //Debug.Log("Player in fan");
             playerRB = _other.gameObject.GetComponent<Rigidbody>();
 
             if(isGuardfan)

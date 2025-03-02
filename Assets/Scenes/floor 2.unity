@@ -1350,7 +1350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 182483775}
-  - component: {fileID: 182483776}
   m_Layer: 0
   m_Name: start room
   m_TagString: Untagged
@@ -1373,29 +1372,9 @@ Transform:
   m_Children:
   - {fileID: 1563232423}
   - {fileID: 1858225530}
+  - {fileID: 1534188333}
   m_Father: {fileID: 1921351962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &182483776
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182483774}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 26.973656, y: 18.116734, z: 18.67453}
-  m_Center: {x: -21.684422, y: -8.558367, z: -35.37937}
 --- !u!1001 &198276691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2597,7 +2576,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 1.3133334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 193ca0aa469a0c649ba87b548bdd4b9a, type: 2}
   m_BuildHeightMesh: 0
@@ -13316,6 +13295,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4074211802068040474, guid: f823fdec65640d14d920e3339c8c4472, type: 3}
   m_PrefabInstance: {fileID: 1530549392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1534188332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534188333}
+  - component: {fileID: 1534188334}
+  m_Layer: 11
+  m_Name: SafeZoneTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1534188333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534188332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.4, y: 76.63, z: -37.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 182483775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1534188334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534188332}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 23.673464, y: 26.52903, z: 22.936287}
+  m_Center: {x: 1.7833319, y: 10.663387, z: 0.28095627}
 --- !u!1 &1541834538
 GameObject:
   m_ObjectHideFlags: 0
@@ -15593,7 +15625,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 1.3133334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 3bab0d3dea0886c4697ccf011cfcbf6c, type: 2}
   m_BuildHeightMesh: 0
@@ -16820,7 +16852,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 1.3133334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0da584504e7f03f4c932f7b8e513edf9, type: 2}
   m_BuildHeightMesh: 0
@@ -20890,8 +20922,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd14a683a59373c4f8a685fab5be81a9, type: 2}
+  m_sharedMaterial: {fileID: 8281932772255355499, guid: bd14a683a59373c4f8a685fab5be81a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
