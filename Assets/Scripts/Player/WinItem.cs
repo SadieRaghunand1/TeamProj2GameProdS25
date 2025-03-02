@@ -15,7 +15,7 @@ public class WinItem : MonoBehaviour
     {
         if(_collision.gameObject.layer == 7)
         {
-            
+            Debug.Log("Win!!!!");
             //Win!
             Destroy(this.gameObject);
             SceneManager.LoadScene(4);
