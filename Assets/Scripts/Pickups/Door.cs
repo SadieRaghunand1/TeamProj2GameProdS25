@@ -30,7 +30,7 @@ public class Door : MonoBehaviour
         gameManager = FindAnyObjectByType<GameManager>();
         if (gameManager.cheatMode)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 

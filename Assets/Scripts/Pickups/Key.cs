@@ -11,13 +11,7 @@ public class Key : MonoBehaviour, IPickup
 
     [SerializeField] private AudioSource audioSource;
 
-    private void Start()
-    {
-        if(FindAnyObjectByType<GameManager>().cheatMode)
-        {
-            Destroy(gameObject);
-        }
-    }
+   
 
     private void OnCollisionEnter(Collision collision)
     {
