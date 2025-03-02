@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9168756ca627e69459d3c0ce84d17a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanForce: 1
+  fanForce: 1.5
   minYBeforeForceAgain: 2
   needsKeys: 0
   numKeysNeeded: 0
