@@ -75,6 +75,7 @@ public class pauseMenu : MonoBehaviour
     }
     public void goMainMenu()
     {
+        gameManager.PlayMenuMusic();
         SceneManager.LoadScene(0);
     }
 
